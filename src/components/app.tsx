@@ -9,7 +9,7 @@ import { ILink } from "@/types/link.type";
 const App: FC<{ children: any }> = ({ children }) => {
   const links: ILink[] = [
     {
-      title: "Main",
+      title: "Home",
       href: "/",
     },
   ];

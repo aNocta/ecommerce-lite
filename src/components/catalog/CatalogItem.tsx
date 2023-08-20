@@ -3,8 +3,11 @@ import { FC } from "react";
 import Image from "next/image";
 import ShopButton from "../ShopButton";
 import Link from "next/link";
+import useAddToBasket from "@/hooks/useAddToBasket";
 
 const CatalogItem: FC<{ product: IProduct }> = ({ product }) => {
+  const addToBasketEvent = useAddToBasket(product);
+
   return (
     <article className="flex flex-col shadow-xl ml-[1vmin] overflow-hidden">
       <Link href={`/products/${product.id}`}>
@@ -34,7 +37,7 @@ const CatalogItem: FC<{ product: IProduct }> = ({ product }) => {
         <div className="mt-[1vmin]">
           <span className="font-semibold text-2xl">${product.price}</span>
           <div className="flex items-end justify-between">
-            <ShopButton text="Buy" />
+            <ShopButton text="Buy" event={addToBasketEvent} />
             <span className="flex items-center text-2xl">
               {product.rating.rate}
               <svg

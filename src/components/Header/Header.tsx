@@ -3,6 +3,7 @@ import { ILink } from "@/types/link.type";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import MiniBasket from "../mini-basket/MiniBasket";
 
 interface IHeaderProps {
   logo: IImage;
@@ -13,7 +14,7 @@ interface IHeaderProps {
 const Header: FC<IHeaderProps> = ({ links, logo, altAttr = "" }) => {
   return (
     <header className="flex justify-center shadow-xl relative z-[999]">
-      <div className="w-[80vw] flex justify-between">
+      <div className="flex justify-between w-[95vw] md:w-[80vw]">
         <Image
           src={logo.imageSrc}
           width={logo.width}
@@ -21,16 +22,17 @@ const Header: FC<IHeaderProps> = ({ links, logo, altAttr = "" }) => {
           alt={altAttr}
           className="w-[125px]"
         ></Image>
-        <nav>
+        <nav className="flex items-center">
           {links.map((link, k) => (
             <Link
-              className="block p-[1vmin] text-xl font-medium"
+              className="block p-[1vmin] font-medium text-2xl md:text-xl"
               href={link.href}
               key={k}
             >
               {link.title}
             </Link>
           ))}
+          <MiniBasket></MiniBasket>
         </nav>
       </div>
     </header>

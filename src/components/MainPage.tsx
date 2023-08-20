@@ -14,8 +14,8 @@ const MainPage: FC = () => {
     (state) => state.categoriesFilterSlice.categories
   ) as string[];
   return (
-    <div className="flex justify-center mt-[1vmin]">
-      <div className="flex w-[80vw]">
+    <div className="flex justify-center mt-[1vmin] overflow-x-hidden">
+      <div className="flex flex-col w-[95vw] md:w-[80vw] md:flex-row">
         <Filter />
         <Catalog
           min={priceFilter.min}

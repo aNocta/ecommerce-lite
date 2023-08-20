@@ -47,7 +47,7 @@ const Catalog: FC<ICatalogProps> = ({ min, max, categories }) => {
         pages={currentProducts.length / 8}
         setPageCallback={setCurrentPage}
       />
-      <div className="grid grid-cols-3 gap-[1vmin]">
+      <div className="grid gap-[1vmin] sm:grid-cols-2 md:grid-cols-3">
         {sliceArray(
           currentProducts,
           7 * currentPage + (currentPage ? 1 : 0),
