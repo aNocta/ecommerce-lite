@@ -28,6 +28,7 @@ const ContactForm: FC<{ products: IProduct[] }> = ({ products }) => {
   if (!submited)
     return (
       <form className="ml-[3vw]" onSubmit={handleSubmit(onSubmit)}>
+        &csrf;
         <h2 className="text-4xl">Send application</h2>
         {(errors.name || errors.email || errors.tel) && (
           <div className="bg-red-400 text-red-900 p-[2vmin] mt-[1vmin] text-xl font-medium rounded-xl">
