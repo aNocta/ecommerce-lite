@@ -46,6 +46,7 @@ const Catalog: FC<ICatalogProps> = ({ min, max, categories }) => {
       <CatalogPagination
         pages={currentProducts.length / 8}
         setPageCallback={setCurrentPage}
+        key="tcatpgn"
       />
       <div className="grid gap-[1vmin] sm:grid-cols-2 md:grid-cols-3">
         {sliceArray(
@@ -53,12 +54,13 @@ const Catalog: FC<ICatalogProps> = ({ min, max, categories }) => {
           7 * currentPage + (currentPage ? 1 : 0),
           7 * (currentPage + 1)
         ).map((product, k) => (
-          <CatalogItem product={product} key={k} />
+          <CatalogItem product={product} key={`product${k}`} />
         ))}
       </div>
       <CatalogPagination
         pages={currentProducts.length / 8}
         setPageCallback={setCurrentPage}
+        key="bcatpgn"
       />
     </div>
   );

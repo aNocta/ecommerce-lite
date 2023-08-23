@@ -9,7 +9,7 @@ const BasketView: FC<{ products: IProduct[] }> = ({ products }) => {
       {arrayToSet<IProduct>(products).map((x) => (
         <BasketItem
           product={x}
-          key={x.id}
+          key={`bskview${x.id}`}
           count={countOfItem<IProduct>(products, x.id)}
         />
       ))}

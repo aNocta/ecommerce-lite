@@ -15,9 +15,8 @@ const CatalogPagination: FC<ICatalogPaginationProps> = ({
     <div className="flex my-[1vmin]">
       {pages > 1
         ? numberToArray(pages).map((x) => (
-            <div className="ml-[1vmin]">
+            <div className="ml-[1vmin]" key={`pbtn${x}`}>
               <ShopButton
-                key={x}
                 text={(x + 1).toString()}
                 event={() => setPageCallback(x)}
               />
